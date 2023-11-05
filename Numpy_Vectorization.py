@@ -90,3 +90,44 @@ print(f"b = np.mean(a): {b}")
 
 b = a ** 2
 print(f"b = a**2      : {b}")
+
+print()
+print("Vector Vector Element-wise Operations")
+
+a = np.array([1, 2, 3, 4])
+b = np.array([-1, -2, 3, 4])
+print(f"Binary operators work element wise: {a + b}")
+
+# try a mismatched vector operation
+c = np.array([1, 2])
+try:
+    d = a + c
+except Exception as e:
+    print(e)
+
+
+
+print()
+print("Scalar Vector Operations")
+a = np.array([1, 2, 3, 4])
+
+# multiply a by a scalar
+b = 5 * a
+print(f"b = 5 * a : {b}")
+
+
+def my_dot(a, b):
+    """
+   Compute the dot product of two vectors
+
+    Args:
+      a (ndarray (n,)):  input vector
+      b (ndarray (n,)):  input vector with same dimension as a
+
+    Returns:
+      x (scalar):
+    """
+    x = 0
+    for i in range(a.shape[0]):
+        x = x + a[i] * b[i]
+    return x
